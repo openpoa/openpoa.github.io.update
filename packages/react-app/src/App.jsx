@@ -14,7 +14,7 @@ function App(props) {
           <Home />
         </Route>
       </Switch>
-      <ThemeSwitch />
+      <ThemeSwitch theme="dark" />
     </div>
   );
 }

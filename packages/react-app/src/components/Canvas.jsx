@@ -27,7 +27,7 @@ const Canvas = props => {
  .  *  move your mouse to over the stars   .
  *  .  .   change these values:   .  *
    .      * .        .          * .       */
-   const STAR_COLOR = '#fff';
+   const STAR_COLOR = '#6A7DC9';
    const STAR_SIZE = 3;
    const STAR_MIN_SCALE = 0.2;
    const OVERFLOW_THRESHOLD = 50;

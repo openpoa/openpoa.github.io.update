@@ -35,11 +35,11 @@ function Home() {
         </div>
       </div> */}
       <br></br>
+      <br></br>
       <div>
         <div> Symbol: POA</div>
         <div> Chain ID: 99</div>
-        <div> Network Name: OPOA </div>
-        <div> New RPC URL: [tbd]</div>
+        <div> RPC URL: [tbd]</div>
       </div>
       <br></br>
       <button>add to metamask</button>
