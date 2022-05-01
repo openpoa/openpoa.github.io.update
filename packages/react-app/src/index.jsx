@@ -3,7 +3,9 @@ import React from "react";
 import { ThemeSwitcherProvider } from "react-css-theme-switcher";
 import { BrowserRouter } from "react-router-dom";
 import ReactDOM from "react-dom";
-import App from "./App";
+// import App from "./App";
+import App from "./App_legacy";
+import { Canvas } from "./components";
 import "./index.css";
 
 const themes = {
@@ -24,6 +26,7 @@ ReactDOM.render(
   <ApolloProvider client={client}>
     <ThemeSwitcherProvider themeMap={themes} defaultTheme={prevTheme || "light"}>
       <BrowserRouter>
+      <Canvas />
         <App subgraphUri={subgraphUri} />
       </BrowserRouter>
     </ThemeSwitcherProvider>

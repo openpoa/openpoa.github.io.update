@@ -3,46 +3,58 @@ import logo from "../logo.jpeg"
 const feature = { padding: '10px'};
 const featureTitle = { color: 'white', textDecoration: 'underline', fontWeight: 'bold', textTransform: 'uppercase'}
 
-function Home() {
+/**
+ * web3 props can be passed from '../App.jsx' into your local view component for use
+ * @param {*} yourLocalBalance balance on current network
+ * @param {*} readContracts contracts from current chain already pre-loaded using ethers contract module. More here https://docs.ethers.io/v5/api/contract/contract/
+ * @returns react component
+ **/
+function Home({ yourLocalBalance, readContracts, provider, signer }) {
   // you can also use hooks locally in your component of choice
   // in this case, let's keep track of 'purpose' variable from our contract
-
   return (
     <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height:'100vh', flexDirection: 'column'}}>
       <img width="150px" src={logo} style={{borderRadius: '50%'}} alt="square poa logo" />
       {/* <h1>OPEN POA</h1> */}
-      {/* <p>EVM compatible chain used in and shares technology with other powerful networks such as Kovan & Gnosis</p> */}
-      {/* <div style={{display: 'flex', justifyContent: 'center', backgroundColor: '#5B2CA4', color: "white", padding: '20px'}}>
-        <div style={feature}>
-          <h3 style={featureTitle}>Resilience</h3>
-          <p>PoA Consensus prevents attacks from hindering development & bad actors while keeping value in network</p>
-        </div>
-        <div style={feature}>
-          <h3 style={featureTitle}>Reliability</h3>
-          <p>Known independent validators hosting using professional servers for secure & reliable, independent nodes</p>
-        </div>
-        <div style={feature}>
-          <h3 style={featureTitle}>Speed & Cost</h3>
-          <p>Transactions on OpenPOA consume less gas & are validated quicker than ETH</p>
-        </div>
-        <div style={feature}>
-          <h3 style={featureTitle}>Infrastructure</h3>
-          <p>Block explorer powered by Blockscout client & load-balanced RPC nodes</p>
-        </div>
-        <div style={feature}>
-          <h3 style={featureTitle}>Innovation</h3>
-          <p>Development team and network incentivized to find new advancements to bring on chain</p>
-        </div>
-      </div> */}
       <br></br>
       <br></br>
       <div>
         <div> Symbol: POA</div>
         <div> Chain ID: 99</div>
-        <div> RPC URL: [tbd]</div>
+        <div> RPC URL: http://143.198.77.160</div>
       </div>
       <br></br>
-      <button>add to metamask</button>
+      <button onClick={()=>{
+        console.log('!', provider, signer)
+        // provider.sendSomething(
+        //   {
+        //     "jsonrpc": "2.0",
+        //     "method": "wallet_addEthereumChain",
+        //     "params": [
+        //         {
+        //             "chainId": "0x64",
+        //             "chainName": "xDAI Chain",
+        //             "rpcUrls": [
+        //                 "https://dai.poa.network"
+        //             ],
+        //             "iconUrls": [
+        //                 "https://xdaichain.com/fake/example/url/xdai.svg",
+        //                 "https://xdaichain.com/fake/example/url/xdai.png"
+        //             ],
+        //             "nativeCurrency": {
+        //                 "name": "xDAI",
+        //                 "symbol": "xDAI",
+        //                 "decimals": 18
+        //             },
+        //             "blockExplorerUrls": [
+        //                 "https://blockscout.com/poa/xdai/"
+        //             ]
+        //         }
+        //     ],
+        //     "id": 0
+        // }
+        // )
+      }}>add to metamask</button>
       <br></br>
       <br></br>
       <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: '50px' }}>
